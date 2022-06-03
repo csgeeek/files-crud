@@ -41,7 +41,6 @@
                 </ul>
             </li>
             <li><a href="contact">contact</a></li>
-            <li><a href="home?logout='1'" >logout</a></li>
         </ul>
     </nav>
 
@@ -57,102 +56,26 @@
 <!-- course-2 section starts  -->
 
 <section class="course-2">
-
-    <div class="box">
-        <div class="image">
-            <img src="images/main-course-1.png" alt="">
-        </div>
-        <div class="content">
-            <span>business</span>
-            <h3>learning is what makes you perfect</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam.</p>
-            <a href="https://www.coursera.org/browse/business" class="btn">read more</a>
-            <div class="icons">
-                <a href="#"> <i class="fas fa-book"></i> 12 modules </a>
-                <a href="#"> <i class="fas fa-clock"></i> 6 hours </a>
+    <% if(pdfs) {%>
+        <% pdfs.map(pdf => { %>
+        <div class="box">
+            <div class="content">
+                <span>resume</span>
+                <h3><%= pdf.filename %></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam.</p>
+                <a href="/material/pdf/<%= pdf.filename %>" class="btn">Read more</a>
+                <div class="icons">
+                    <a href="#"> <i class="fas fa-book"></i> 12 modules </a>
+                    <a href="#"> <i class="fas fa-clock"></i> 6 hours </a>
+                </div>
             </div>
         </div>
-    </div>
+        <% }) %>
+    <% } else{ %>
+        <p>No pdfs found</p>
+    <% } %>
 
-    <div class="box">
-        <div class="image">
-            <img src="images/main-course-2.png" alt="">
-        </div>
-        <div class="content">
-            <span>language</span>
-            <h3>learning is what makes you perfect</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam.</p>
-            <a href="https://www.edx.org/learn/language" class="btn">read more</a>
-            <div class="icons">
-                <a href="#"> <i class="fas fa-book"></i> 12 modules </a>
-                <a href="#"> <i class="fas fa-clock"></i> 6 hours </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-            <img src="images/main-course-3.png" alt="">
-        </div>
-        <div class="content">
-            <span>development</span>
-            <h3>learning is what makes you perfect</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam.</p>
-            <a href="https://www.udemy.com/courses/development/" class="btn">read more</a>
-            <div class="icons">
-                <a href="#"> <i class="fas fa-book"></i> 12 modules </a>
-                <a href="#"> <i class="fas fa-clock"></i> 6 hours </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-            <img src="images/main-course-4.png" alt="">
-        </div>
-        <div class="content">
-            <span>teaching</span>
-            <h3>learning is what makes you perfect</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam.</p>
-            <a href="https://www.futurelearn.com/subjects/teaching-courses" class="btn">read more</a>
-            <div class="icons">
-                <a href="#"> <i class="fas fa-book"></i> 12 modules </a>
-                <a href="#"> <i class="fas fa-clock"></i> 6 hours </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-            <img src="images/main-course-5.png" alt="">
-        </div>
-        <div class="content">
-            <span>designing</span>
-            <h3>learning is what makes you perfect</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam.</p>
-            <a href="https://www.udemy.com/courses/design/" class="btn">read more</a>
-            <div class="icons">
-                <a href="#"> <i class="fas fa-book"></i> 12 modules </a>
-                <a href="#"> <i class="fas fa-clock"></i> 6 hours </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="box">
-        <div class="image">
-            <img src="images/main-course-6.png" alt="">
-        </div>
-        <div class="content">
-            <span>speaking</span>
-            <h3>learning is what makes you perfect</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quam.</p>
-            <a href="https://www.edx.org/learn/public-speaking" class="btn">read more</a>
-            <div class="icons">
-                <a href="#"> <i class="fas fa-book"></i> 12 modules </a>
-                <a href="#"> <i class="fas fa-clock"></i> 6 hours </a>
-            </div>
-        </div>
-    </div>
+    
 
 </section>
 

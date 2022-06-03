@@ -42,7 +42,6 @@
                 </ul>
             </li>
             <li><a href="contact">contact</a></li>
-            <li><a href="home?logout='1'" >logout</a></li>
         </ul>
     </nav>
 
@@ -58,69 +57,18 @@
 <!-- course-1 section starts  -->
 
 <section class="course-1">
-
-    <div class="box">
-        <img src="images/course-1.png" alt="">
-        <h3>web design</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="/material/video/4438c65f5eea7cf9f6e9506df60e340d.mkv" class="btn">read more</a>
-    </div>
-    
-    <div class="box">
-        <img src="images/course-2.png" alt="">
-        <h3>seo marketing</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="/material/image/c6121503de23fefeb9cb4a2d965b9267.png" class="btn">read more</a>
-    </div>
-
-    <div class="box">
-        <img src="images/course-3.png" alt="">
-        <h3>science & biology</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="/material/video/sample.mkv" class="btn">read more</a>
-    </div>
-
-    <div class="box">
-        <img src="images/course-4.png" alt="">
-        <h3>music & dance</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="/material/pdf/8a0cebcedc0791ea8ce09d6d7fd535c5.pdf" class="btn">read more</a>
-    </div>
-
-    <div class="box">
-        <img src="images/course-5.png" alt="">
-        <h3>digital marketing</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="https://www.simplilearn.com/tutorials/digital-marketing-tutorial" class="btn">read more</a>
-    </div>
-
-    <div class="box">
-        <img src="images/course-6.png" alt="">
-        <h3>maths & statistics</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="https://byjus.com/maths/statistics/" class="btn">read more</a>
-    </div>
-
-    <div class="box">
-        <img src="images/course-7.png" alt="">
-        <h3>data analysis</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="https://www.javatpoint.com/python-data-analytics" class="btn">read more</a>
-    </div>
-
-    <div class="box">
-        <img src="images/course-8.png" alt="">
-        <h3>email marketing</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="https://www.sendinblue.com/blog/what-is-email-marketing/" class="btn">read more</a>
-    </div>
-
-    <div class="box">
-        <img src="images/course-9.png" alt="">
-        <h3>graphic design</h3>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
-        <a href="https://www.youtube.com/watch?v=dFSia1LZI4Y" class="btn">read more</a>
-    </div>
+    <% if(videos) {%>
+        <% videos.map(video => { %>
+            <div class="box">
+                <!-- <img src="images/course-1.png" alt=""> -->
+                <h3><%= video.filename %></h3>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, earum.</p>
+                <a href="/material/video/<%= video.filename %>" class="btn">read more</a>
+            </div>
+        <% }) %>
+    <% } else {%>
+        <h3>No videos found</h3>
+    <% } %>
 
 </section>
 

@@ -106,6 +106,28 @@ router.get('/files', (req, res) => {
     });
 });
 
+
+// get all files in json
+router.get('/allpdfs', (req, res) => {
+  gfs.files.find().toArray((err, files) => {
+      // Check if files
+      if (!files || files.length === 0) {
+        return res.render("course-2", {pdfs: false})
+      }
+
+      // Files exist
+      // console.log(files);
+      const pdfs = [];
+      files.map(file => {
+        if(file.contentType === 'application/pdf') {
+          pdfs.push(file);
+        }
+      });
+      res.render('course-2', { pdfs: pdfs });
+      // return res.json(files);
+  });
+});
+
 // get single file in json
 router.get('/files/:filename', (req, res) => {
     gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
