@@ -1,0 +1,27 @@
+{
+  "name": "gridfs-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "gridfs-stream": "^1.1.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.13.7",
+    "multer": "^1.4.4",
+    "multer-gridfs-storage": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
